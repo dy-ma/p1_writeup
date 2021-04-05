@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
+\usepackage[a4paper, margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
 \usepackage{indentfirst}
@@ -15,9 +15,66 @@
 
 \tableofcontents
 
+\section{Reference}
+\begin{center}
+    \begin{tabular}{p{3cm} p{12cm}}
+        $\Rightarrow$ File1 $\Leftarrow$ & Has a series of 500,000 insertions in order from 1 to 500000 \\
+        $\Rightarrow$ File2 $\Leftarrow$ & Has a series of 250,000 insertions in order from 1 to 250000 followed by 250,000 deletions 1 to 250000 \\
+        $\Rightarrow$ File3 $\Leftarrow$ & Has a series of 250,000 insertions in order from 1 to 250000 followed by 250,000 deletions 250000 to 1 \\
+        $\Rightarrow$ File4 $\Leftarrow$ & Has a series of 250000 random, unique insertions from 1 to 250000 followed by 250000 random, unique deletions \\
+
+        $\Rightarrow$ ADT 1 $\Leftarrow$ & Linked List \\
+        $\Rightarrow$ ADT 2 $\Leftarrow$ & Cursor List \\
+        $\Rightarrow$ ADT 3 $\Leftarrow$ & Stack implemented as an Array \\
+        $\Rightarrow$ ADT 4 $\Leftarrow$ & Stack implemented as a Linked List \\
+        $\Rightarrow$ ADT 5 $\Leftarrow$ & Queue implemented as an Array \\
+        $\Rightarrow$ ADT 6 $\Leftarrow$ & Skip List \\
+    \end{tabular}
+\end{center}
+
+% ====== Times ======
+\section{Times}
+\begin{center}
+    \begin{tabular}{l c r r r r}
+        % label bar
+        File  & ADT & Time1    & Time2    & Time3    & Average    \\
+
+        \hline % Linked List
+        File1 & 1   & 0.064501 & 0.059457 & 0.059385 & 0.061114   \\
+        File2 & 1   & 73.9228  & 73.9897  & 73.9399  & 73.950800  \\
+        File3 & 1   & 0.074317 & 0.046418 & 0.041135 & 0.053957   \\
+        File4 & 1   & 11.5934  & 11.6341  & 11.6124  & 11.613300  \\
+        \hline % CursorList
+        File1 & 2   & 0.061247 & 0.05905  & 0.058898 & 0.059732   \\
+        File2 & 2   & 340.42   & 340.321  & 340.434  & 340.391667 \\
+        File3 & 2   & 0.066172 & 0.060504 & 0.06046  & 0.062379   \\
+        File4 & 2   & 42.4495  & 49.7888  & 49.9038  & 47.380700  \\
+        \hline % Stack Array
+        File1 & 3   & 0.036738 & 0.033312 & 0.032751 & 0.034267   \\
+        File2 & 3   & 0.034676 & 0.031774 & 0.031513 & 0.032654   \\
+        File3 & 3   & 0.034417 & 0.03176  & 0.031692 & 0.032623   \\
+        File4 & 3   & 0.020147 & 0.016222 & 0.016138 & 0.017502   \\
+        \hline % Stack List
+        File1 & 4   & 0.055112 & 0.048781 & 0.048636 & 0.050843   \\
+        File2 & 4   & 0.038699 & 0.038155 & 0.03802  & 0.038291   \\
+        File3 & 4   & 0.042772 & 0.038    & 0.038024 & 0.039599   \\
+        File4 & 4   & 0.024526 & 0.01934  & 0.019345 & 0.021070   \\
+        \hline % Queue Array
+        File1 & 5   & 0.037728 & 0.035137 & 0.034607 & 0.035824   \\
+        File2 & 5   & 0.038181 & 0.034352 & 0.03414  & 0.035558   \\
+        File3 & 5   & 0.03843  & 0.034055 & 0.033914 & 0.035466   \\
+        File4 & 5   & 0.020553 & 0.017409 & 0.017301 & 0.018421   \\
+        \hline % Skip List
+        File1 & 6   & 0.154624 & 0.155144 & 0.158328 & 0.156032   \\
+        File2 & 6   & 0.120325 & 0.115589 & 0.117138 & 0.117684   \\
+        File3 & 6   & 0.136952 & 0.131517 & 0.138876 & 0.135782   \\
+        File4 & 6   & 0.13124  & 0.131421 & 0.132129 & 0.131597
+    \end{tabular}
+\end{center}
+
 % ====== Time Complexity ======
 \section{Time Complexity}
-    
+
 \begin{center}
     \begin{tabular}{c c c c c}
         ADT & File1 & File2 & File3 & File4 \\
@@ -30,49 +87,6 @@
         6   & $O()$ & $O()$ & $O()$ & $O()$
     \end{tabular}
 \end{center}
-
-
-% ====== Times ======
-\section{Times}
-\begin{center}
-    \begin{tabular}{l c r r r r}
-        % label bar
-        File & ADT & Time1 & Time2 & Time3 & Average \\  
-
-        \hline % Linked List
-        File1 & 1 & 0.064501 & 0.059457 & 0.059385 & 0.061114 \\
-        File2 & 1 & 73.9228 & 73.9897 & 73.9399 & 73.950800 \\
-        File3 & 1 & 0.074317 & 0.046418 & 0.041135 & 0.053957 \\
-        File4 & 1 & 11.5934 & 11.6341 & 11.6124 & 11.613300 \\
-        \hline % CursorList
-        File1 & 2 & 0.061247 & 0.05905 & 0.058898 & 0.059732 \\
-        File2 & 2 & 340.42 & 340.321 & 340.434 & 340.391667 \\
-        File3 & 2 & 0.066172 & 0.060504 & 0.06046 & 0.062379 \\
-        File4 & 2 & 42.4495 & 49.7888 & 49.9038 & 47.380700 \\
-        \hline % Stack Array
-        File1 & 3 & 0.036738 & 0.033312 & 0.032751 & 0.034267 \\
-        File2 & 3 & 0.034676 & 0.031774 & 0.031513 & 0.032654 \\
-        File3 & 3 & 0.034417 & 0.03176 & 0.031692 & 0.032623 \\
-        File4 & 3 & 0.020147 & 0.016222 & 0.016138 & 0.017502 \\
-        \hline % Stack List
-        File1 & 4 & 0.055112 & 0.048781 & 0.048636 & 0.050843 \\
-        File2 & 4 & 0.038699 & 0.038155 & 0.03802 & 0.038291 \\
-        File3 & 4 & 0.042772 & 0.038 & 0.038024 & 0.039599 \\
-        File4 & 4 & 0.024526 & 0.01934 & 0.019345 & 0.021070 \\
-        \hline % Queue Array
-        File1 & 5 & 0.037728 & 0.035137 & 0.034607 & 0.035824 \\
-        File2 & 5 & 0.038181 & 0.034352 & 0.03414 & 0.035558 \\
-        File3 & 5 & 0.03843 & 0.034055 & 0.033914 & 0.035466 \\
-        File4 & 5 & 0.020553 & 0.017409 & 0.017301 & 0.018421 \\
-        \hline % Skip List
-        File1 & 6 & 0.154624 & 0.155144 & 0.158328 & 0.156032 \\
-        File2 & 6 & 0.120325 & 0.115589 & 0.117138 & 0.117684 \\
-        File3 & 6 & 0.136952 & 0.131517 & 0.138876 & 0.135782 \\
-        File4 & 6 & 0.13124 & 0.131421 & 0.132129 & 0.131597
-    \end{tabular}
-\end{center}
-
-
 
 \section{Writeup}
 
